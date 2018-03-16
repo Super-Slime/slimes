@@ -1,0 +1,131 @@
+
+package bankaccount;
+
+ import java.util.Scanner;
+ import java.util.*;
+
+
+ class BankAccount {
+
+    private String accountName;
+    private double balance;
+    private double deposit;
+    private double withdraw;
+   
+    
+    
+    public BankAccount(){
+        balance = 800;
+        deposit= 250;
+      
+    }
+    public BankAccount(String accountName,double balance){
+        
+        this.accountName = accountName;
+        this.balance = balance;
+        
+    }
+    public void setAccountName(String accountName)
+    {
+        this.accountName = accountName;
+        
+    }
+    
+    public String getAccountName(){
+        
+        return accountName;
+    }
+    
+    public void setBalance(double balance)
+    {
+        this.balance =balance;
+        
+    }
+    
+    public double getBalance(){
+        
+        return balance;
+    }
+    
+    public void setDeposit(double deposit)
+    {
+        this.deposit += deposit;
+        
+    }
+    
+    public double getDeposit(){
+          
+        return deposit;
+    }
+   
+    
+ public boolean withdraw()
+    {
+      if(withdraw > balance){
+          System.out.println("Insufficient Funds");
+          
+          return false;
+      }else{
+          return true;
+          
+      }
+        
+    
+    }
+ 
+
+      class CheckingAccount extends BankAccount{
+         
+         
+          
+        public void lastchecknum(){
+            
+            System.out.println("do it"); 
+        } 
+      }
+      
+      class SavingsAccount extends BankAccount{
+          
+          public void interestRate(){
+              
+              System.out.println("mk");
+          }
+      }
+       
+      
+      class Investment extends BankAccount{
+          
+          public void AccountRep(){
+              
+              System.out.println("gh");
+          }
+      }
+ 
+
+
+
+
+        public static void main(String[] args) {
+            
+        
+        BankAccount bankaccount1 = new BankAccount();
+        BankAccount BankAccount2 = new BankAccount();
+        Scanner console = new Scanner(System.in);
+        
+
+        
+        System.out.println("Please enter your account name");
+        BankAccount2.accountName = console.nextLine();
+        
+        System.out.println("YOUR ACCOUNT NAME IS:"+BankAccount2.accountName);
+        
+       System.out.println("ENTER THE AMOUNT OF WITHDRAWAL:");
+       BankAccount2.withdraw = console.nextDouble();
+        
+       System.out.println("AMOUNT  WITHDRAWED IS: "+ bankaccount1.withdraw);
+              
+       
+         
+}   
+
+}
